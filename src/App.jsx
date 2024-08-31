@@ -1,7 +1,7 @@
 
 import './App.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 import Products from './components/Products/Products';
@@ -31,7 +31,8 @@ import ResetAccount from './components/ResetAccount/ResetAccount';
 
 function App() {
  
-const router=  createBrowserRouter([
+const router=  createHashRouter([
+
     {
       path:"",
       element:<Layout/>,
@@ -42,8 +43,6 @@ const router=  createBrowserRouter([
           element:<ProtectedRoute>
           <Home/>
           </ProtectedRoute>
-          
-          
         },
         {
           path:"/Products",
